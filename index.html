@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Select Card</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <form class="form">
+      <div class="form-heading"><h2>Select Card</h2></div>
+      <div class="form-img">
+        <img
+          id="cardImage"
+          src="https://tse1.mm.bing.net/th?id=OIP.GL9O4N0uLU3ck3zdEKYrawHaFw&pid=Api&P=0&h=180"
+        />
+        <img
+          id="cardImage"
+          src="https://tse4.mm.bing.net/th?id=OIP.vRQZ8vcw73umQSZ0Pg45HgHaFj&pid=Api&P=0&h=180"
+        />
+        <img
+          id="cardImage"
+          src="https://i.pinimg.com/originals/55/a3/c2/55a3c2e6e01843e209cf2c2b279363b9.png"
+        />
+        <img
+          id="cardImage"
+          src="https://tse2.mm.bing.net/th?id=OIP.V0duj2DHUhxVJ4LEb2FodgHaEF&pid=Api&P=0&h=180"
+        />
+        <img
+          id="cardImage"
+          src="https://tse1.mm.bing.net/th?id=OIP.lg8SO50EWvUVYg1VhgMdAAHaHa&pid=Api&P=0&h=180"
+        />
+      </div>
+      <hr />
+      <div class="cardNumber">
+        <label for="">Card Number</label>
+        <input
+          type="text"
+          id="cardNumber"
+          required
+          pattern="\d{16}"
+          placeholder="Enter Card Number"
+        />
+        <div id="notification"></div>
+      </div>
+      <div class="cardInfo">
+        <div>
+          <label for="">Expity Date</label>
+          <input
+            type="text"
+            id="expiryDate"
+            placeholder="MM/YYYY"
+            required
+            pattern="(0[1-9]|1[0-2])\/\d{4}"
+          />
+          <div id="notification"></div>
+        </div>
+        <div>
+          <label for="">CVC/CVV</label>
+          <input
+            type="text"
+            id="cvv"
+            placeholder="Enter CVV"
+            required
+            pattern="\d{3}"
+          />
+          <div id="notification"></div>
+        </div>
+      </div>
+      <div class="button">
+        <button type="button" onclick="saveCard()">Save</button>
+      </div>
+    </form>
+    <table border="1">
+      <tr>
+        <th>Card Img</th>
+        <th>Card Number</th>
+        <th>Expiry Date</th>
+        <th>CVV</th>
+        <th>Action</th>
+      </tr>
+      <tbody id="cardList">
+        <!-- danh sách thẻ được thêm ở đây -->
+      </tbody>
+    </table>
+    <script src="https://cdn.jsdelivr.net/npm/uuid@8.3.2/dist/umd/uuidv4.min.js"></script>
+    <script src="./index.js"></script>
+  </body>
+</html>
